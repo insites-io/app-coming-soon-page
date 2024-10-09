@@ -1,0 +1,50 @@
+---
+slug: coming-soon-v1
+layout: modules/coming_soon_page/default
+searchable: true
+max_deep_level: 1
+metadata: {
+  page_name: "Insites Coming Soon Page | Version 1",
+  page_type: "content",
+  page_title: "Insites Coming Soon Page | Version 1",
+  meta_title: "Insites Coming Soon Page | Version 1",
+  canonical_url: "",
+  open_graph_url: "",
+  open_graph_type: "",
+  meta_description: "Insites Coming Soon Page | Version 1",
+  open_graph_title: "Insites Coming Soon Page | Version 1",
+  open_graph_site_name: "",
+  open_graph_description: "Insites Coming Soon Page | Version 1",
+  is_visible_to_search_engines: true,
+  is_auth_policy_enabled: false,
+}
+dynamic_cache:
+  layout: true
+  key: |-
+    {%- parse_json models -%}
+    [
+      "modules/insites_site_manager/insites_global_content"
+    ]
+    {%- endparse_json -%}
+    {%- include "modules/coming_soon_page/cache/generate_cache_key", models: models -%}
+---
+
+{% include "modules/coming_soon_page/data/global_content" %}
+{%- assign global = context.exports.global -%}
+
+<div class="coming-soon-v1" >
+  <div class="grid-x grid-padding-x">
+    <div class="logo-container cell text-center">
+      <a href="{{ context.params.slug }}">
+        <img class="logo" src="{{ global.company_logo.url }}" 
+          alt="Company Logo"   
+          width="133" 
+          height="auto" >
+      </a>
+    </div>
+    <div class="spacer xx-large"></div>
+    <div class="content-container cell text-center">
+      {%- include "modules/coming_soon_page/content/coming_soon_card" -%}
+    </div>
+  </div>
+</div>

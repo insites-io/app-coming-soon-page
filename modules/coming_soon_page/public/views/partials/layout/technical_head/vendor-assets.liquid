@@ -1,0 +1,25 @@
+---
+  metadata: {
+    partial_name: "vendor-assets"
+  }
+---
+
+{%- comment -%}
+ - Vendor Assets holds all 3rd party assets references.
+ - Any assets such as scripts, css, etc. that is not made by the developer.
+{%- endcomment -%}
+
+
+<!-- Images -->
+<link rel="preload" href="{{ 'modules/coming_soon_page/images/Background@1.5x.webp' | asset_url }}" as="image">
+
+<!-- Preload assets to improve performance -->
+<link rel="preload" href="{{ 'modules/coming_soon_page/styles/vendor/foundation.min.css' | asset_url }}" as="style">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/notyf@3/notyf.min.css" as="style">
+
+<!-- Foundation -->
+<link rel="stylesheet" href="{{ 'modules/coming_soon_page/styles/vendor/foundation.min.css' | asset_url }}">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/notyf@3/notyf.min.css">
+
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@9" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/notyf@3/notyf.min.js" defer></script>

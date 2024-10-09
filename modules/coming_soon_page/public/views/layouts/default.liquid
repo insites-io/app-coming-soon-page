@@ -1,0 +1,27 @@
+---
+metadata:
+    layout_name: 'default_layout'
+---
+
+{%- comment -%} Used by the fragment cache in the layout {%- endcomment -%}
+{%- include "modules/coming_soon_page/cache/layout_fragment_cache_key" -%}
+
+<!doctype html>
+<html class="no-js" lang="en">
+    <head>
+        {% include 'modules/coming_soon_page/layout/head' %}  
+    </head>
+    <body class="background-image" 
+        style="background-image: url('{{ 'modules/coming_soon_page/images/Background@1.5x.webp' | asset_url }}');" >
+        
+        <div class="main-wrap">
+            {{ content_for_layout }}
+        </div>
+
+        {% if context.params.slug == "coming-soon-v1" %}
+            {% include 'modules/coming_soon_page/layout/footer_1' %}
+        {% else %}
+            {% include 'modules/coming_soon_page/layout/footer_2' %}
+        {% endif %}
+    </body>
+</html>

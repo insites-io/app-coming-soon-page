@@ -1,0 +1,25 @@
+---
+  metadata: {
+    partial_name: "social-media-icons"
+  }
+---
+  
+{%- assign global = context.exports.global -%}
+
+<div class="icons">
+  <a href="{{ global.facebook_link }}" data-test="footer-link-facebook" target="_blank" title="facebook" rel="noreferrer">
+    <i class="icon-facebook-square"></i>
+  </a>
+  <a href="{{ global.twitter_link }}" data-test="footer-link-twitter" target="_blank" title="twitter" rel="noreferrer">
+    <i class="icon-social-x"></i>
+  </a>
+  <a href="{{ global.linkedin_link }}" data-test="footer-link-linkedin" target="_blank" title="linkedin" rel="noreferrer">
+    <i class="icon-linkedin"></i>
+  </a>
+  <a href="{{ global.instagram_link }}" data-test="footer-link-instagram" target="_blank" title="instagram" rel="noreferrer">
+    <i class="icon-instagram"></i>
+  </a>
+  <a href="{{ global.youtube_link }}" data-test="footer-link-youtube" target="_blank" title="youtube" rel="noreferrer">
+    <i class="icon-youtube"></i>
+  </a>
+</div>

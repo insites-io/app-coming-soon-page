@@ -1,0 +1,25 @@
+---
+  metadata: {
+    partial_name: "technical_head"
+  }
+---
+
+{%- comment -%}
+    - Technical head holds all 'General / Global' assets / dependencies refererenced 
+    - within <head> such as scripts, CSS, font references, favicons, Insites dependencies, etc. 
+    - (Insites assets, GTM, etc..)
+
+    - We try to limit assets that are part of the technical head to minimize page size 
+    - & improve page performance.
+
+    - Assets like 'Google Map API', should only be referenced as needed.
+    - Managed on the 'page / layout' level
+{%- endcomment -%}
+{% liquid
+    include 'modules/coming_soon_page/layout/technical_head/fonts'
+    include 'modules/coming_soon_page/layout/technical_head/favicons'
+    include 'modules/coming_soon_page/layout/technical_head/msapplication'
+    include 'modules/coming_soon_page/layout/technical_head/vendor-assets'
+    include 'modules/coming_soon_page/layout/technical_head/insites-assets'
+    include 'modules/coming_soon_page/layout/technical_head/project-assets'
+%}
