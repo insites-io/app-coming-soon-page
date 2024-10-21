@@ -36,10 +36,17 @@ dynamic_cache:
   <div class="grid-x grid-padding-x">
     <div class="logo-container cell text-center">
       <a href="{{ context.params.slug }}">
-        <img class="logo" src="{{ global.company_logo.url }}" 
-          alt="Company Logo"   
-          width="133" 
-          height="auto" >
+        {% if global.company_logo.url != blank %}
+          <img class="logo" src="{{ global.company_logo.url }}" 
+            alt="Company Logo"   
+            width="133" 
+            height="auto" >
+        {% else %}
+          <img class="logo" src="{{ 'modules/coming_soon_page/images/logo/company-logo.png' | asset_url }}" 
+            alt="Company Logo"   
+            width="133" 
+            height="auto" >
+        {% endif %}
       </a>
     </div>
     <div class="spacer xx-large"></div>
